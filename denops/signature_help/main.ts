@@ -14,7 +14,9 @@ export function main(denops: Denops) {
     },
 
     async respond(arg1: unknown): Promise<void> {
-      await handler.onSighelpResponce(denops, arg1 as SignatureHelp);
+      if (arg1) {
+        await handler.onSighelpResponce(denops, arg1 as SignatureHelp);
+      }
     },
   };
 }
